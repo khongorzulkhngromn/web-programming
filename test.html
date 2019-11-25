@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <title>Document</title>
+    <style>
+      .container {
+        max-width: 1000px;
+        margin: auto;
+      }
+      .section {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+      .active {
+        background-color: #717171;
+      }
+      img {
+        vertical-align: middle;
+      }
+      .image-slider {
+        width: 100%;
+        position: relative;
+        margin: auto;
+      }
+      .mySlides {
+        display: none;
+      }
+      .fade {
+        -webkit-animation-name: fade;
+        -webkit-animation-duration: 1.5s;
+        animation-name: fade;
+        animation-duration: 1.5s;
+      }
+
+      @-webkit-keyframes fade {
+        from {
+          opacity: 0.4;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes fade {
+        from {
+          opacity: 0.4;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      .date {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      .title {
+        font-size: medium;
+        font-weight: bold;
+      }
+      .sub-title {
+        font-size: small;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="section">
+        <div class="w3-content w3-section" style="max-width:100%">
+          <img
+            class="mySlides w3-animate-top"
+            src="http://michelamazonka.com/wp-content/uploads/2018/12/I5A3324-768x1152.jpg?x51273"
+            style="width:100%"
+          />
+          <img
+            class="mySlides w3-animate-bottom"
+            src="http://michelamazonka.com/wp-content/uploads/2018/10/18-768x1160.jpg?x51273"
+            style="width:100%"
+          />
+          <img
+            class="mySlides w3-animate-top"
+            src="http://michelamazonka.com/wp-content/uploads/2018/09/BG3A2738-1-copy.jpg?x51273"
+            style="width:100%"
+          />
+          <img
+            class="mySlides w3-animate-bottom"
+            src="http://michelamazonka.com/wp-content/uploads/2018/08/BG3A0083-11-768x1152.jpg?x51273"
+            style="width:100%"
+          />
+        </div>
+        <div class="date">
+          <p class="title">18/11</p>
+          <p class="sub-title"></p>
+        </div>
+        <script>
+                var myIndex = 0;
+                carousel();
+                
+                function carousel() {
+                  var i;
+                  var x = document.getElementsByClassName("mySlides");
+                  for (i = 0; i < x.length; i++) {
+                    x[i].style.display = "none";  
+                  }
+                  myIndex++;
+                  if (myIndex > x.length) {myIndex = 1}    
+                  x[myIndex-1].style.display = "block";  
+                  setTimeout(carousel, 2500);    
+                }
+                </script>
+      </div>
+    </div>
+  </body>
+</html>
